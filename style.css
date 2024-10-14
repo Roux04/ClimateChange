@@ -1,10 +1,11 @@
-* {
+*{
     margin: 0;
     padding: 0;
     font-family: Century;
 }
 
-body {
+body 
+{
     background-image: linear-gradient(
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5),
@@ -16,23 +17,27 @@ body {
     min-height: 100vh;
 }
 
-header {
+header 
+{
     width: 100%;
     background-color: rgba(255, 255, 255, 0.9);
 }
 
-.main-nav ul {
+.main-nav ul 
+{
     display: flex;
     justify-content: center;
     list-style: none;
     padding: 15px 0;
 }
 
-.main-nav li {
+.main-nav li 
+{
     margin: 0 15px;
 }
 
-.main-nav a {
+.main-nav a 
+{
     text-decoration: none;
     color: #333;
     padding: 5px 15px;
@@ -40,26 +45,31 @@ header {
     transition: 0.3s ease;
 }
 
-.main-nav a:hover, .main-nav li.active a {
+.main-nav a:hover, .main-nav li.active a 
+{
     border-color: #333;
 }
 
-.hero {
+.middle 
+{
     text-align: center;
     padding: 100px 20px;
     color: white;
 }
 
-.title h1 {
+.title h1 
+{
     font-size: 48px;
     margin-bottom: 20px;
 }
 
-.cta-buttons {
+.buttons 
+{
     margin-top: 30px;
 }
 
-.buttonn {
+.buttonn 
+{
     display: inline-block;
     padding: 10px 25px;
     margin: 0 10px;
@@ -69,12 +79,14 @@ header {
     transition: 0.3s ease;
 }
 
-.buttonn:hover {
+.buttonn:hover 
+{
     background-color: white;
     color: black;
 }
 
-.mission-section {
+.mission-section 
+{
     background-color: rgba(255, 255, 255, 0.9);
     padding: 50px 20px;
     margin: 50px auto;
@@ -82,38 +94,45 @@ header {
     text-align: center;
 }
 
-.mission-section h2 {
+.mission-section h2 
+{
     margin-bottom: 20px;
 }
 
-.mission-points {
+.mission-points 
+{
     display: flex;
     justify-content: space-around;
     margin-top: 40px;
 }
 
-.mission-item {
+.mission-item 
+{
     flex: 1;
     margin: 0 20px;
     padding: 20px;
 }
 
-.mission-item i {
+.mission-item i 
+{
     font-size: 40px;
     margin-bottom: 15px;
 }
 
-.mission-item h3 {
+.mission-item h3 
+{
     margin-bottom: 10px;
 }
 
-footer {
+footer 
+{
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     margin-top: 50px;
 }
 
-.footer-content {
+.footer-content 
+{
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -121,38 +140,44 @@ footer {
     align-items: stretch;
 }
 
-.footer-logo {
+.footer-logo 
+{
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 20px;
 }
 
-.footer-logo img {
+.footer-logo img 
+{
     width: 100%;
     max-height: 200px; 
     object-fit: contain;
 }
 
-.footer-contact {
+.footer-contact 
+{
     text-align: center;
     padding: 20px;
 }
 
-.contact-options {
+.contact-options 
+{
     margin-top: 20px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.contact-options a {
+.contact-options a 
+{
     color: white;
     margin: 10px 15px;
     text-decoration: none;
 }
 
-.contact-options a:hover {
+.contact-options a:hover 
+{
     text-decoration: underline;
 }
 
