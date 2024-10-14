@@ -1,2 +1,6 @@
 # ClimateChange
-An informative website that'll allow users to learn about climate change, the impact it has on the world, and the UN's efforts to address it
+This project aims to create an informative website that allows users to learn about climate change, its impact on the world, and the United Nations' efforts to address it. 
+
+Technology used: 
+Frontend: HTML5, CSS5
+Backend: 
