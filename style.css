@@ -41,7 +41,7 @@ header
     text-decoration: none;
     color: #333;
     padding: 5px 15px;
-    border: 1px solid transparent;
+   
     transition: 0.3s ease;
 }
 
@@ -85,6 +85,33 @@ header
     color: black;
 }
 
+#learn-more > div {
+    background-color:rgb(188, 242, 246, 0.9);
+    max-width: 1200px;
+    margin-left: 130px;
+    padding: 50px 20px;
+    text-align: center;
+    padding-right: 40px;
+    margin-bottom: 30px;
+}
+
+#learn-more img {
+    height: 200px;
+    width: 330px;
+    float: left;
+    margin-left: 100px;
+}
+
+#global {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#global > h2, h4 {
+    color: aliceblue;
+
+}
 .mission-section 
 {
     background-color: rgba(255, 255, 255, 0.9);
@@ -180,5 +207,3 @@ footer
 {
     text-decoration: underline;
 }
-
-
