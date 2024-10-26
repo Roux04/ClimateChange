@@ -1,11 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: Century;
+    scroll-behavior: smooth;
 }
 
-body 
-{
+html {
+    scroll-padding-top: 70px;
+}
+
+body {
     background-image: linear-gradient(
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5),
@@ -17,59 +21,94 @@ body
     min-height: 100vh;
 }
 
-header 
-{
+header {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
-.main-nav ul 
-{
+main {
+    padding-top: 60px;
+}
+
+.main-nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
     padding: 15px 0;
 }
 
-.main-nav li 
-{
+.main-nav li {
     margin: 0 15px;
 }
 
-.main-nav a 
-{
+.main-nav a {
     text-decoration: none;
     color: #333;
     padding: 5px 15px;
-   
     transition: 0.3s ease;
 }
 
-.main-nav a:hover, .main-nav li.active a 
-{
-    border-color: #333;
+.main-nav a:hover, .main-nav li.active a {
+    background-color: rgba(51, 51, 51, 0.1);
+    border-radius: 4px;
 }
 
-.middle 
-{
+section {
+    min-height: 100vh;
+    padding: 80px 20px;
+    box-sizing: border-box;
+}
+
+.middle {
     text-align: center;
     padding: 100px 20px;
     color: white;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.title h1 
+.middle h1 
 {
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-size: 10em;
+    margin-bottom: 21px;
+    color: #78c2d6;
+    text-shadow: 
+    0px 1px 0px #6a99a7,
+    0px 2px 0px #6a99a7,
+    0px 3px 0px #6a99a7,
+    0px 4px 0px #6a99a7,
+    0px 4px 0px #6a99a7,
+    0px 5px 0px #6a99a7,
+    0px 6px 0px #6a99a7,
+    0px 7px 0px #6a99a7,
+    0px 8px 0px #6a99a7,
+    0px 9px 0px #6a99a7,
+    0px 10px 0px #6a99a7,
+
+    0px 10px 5px #ffffff;
 }
 
-.buttons 
+.middle p
 {
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+
+    text-shadow:
+    1px 1px 1px rgb(0, 0, 0),
+    2px 2px 1px black;
+}
+
+.buttons {
     margin-top: 30px;
 }
 
-.buttonn 
-{
+.buttonn {
     display: inline-block;
     padding: 10px 25px;
     margin: 0 10px;
@@ -79,131 +118,261 @@ header
     transition: 0.3s ease;
 }
 
-.buttonn:hover 
-{
+.buttonn:hover {
     background-color: white;
     color: black;
 }
 
 #learn-more > div {
-    background-color:rgb(188, 242, 246, 0.9);
+    background-color: rgba(188, 242, 246, 0.9);
     max-width: 1200px;
-    margin-left: 130px;
+    margin: 0 auto;
     padding: 50px 20px;
     text-align: center;
-    padding-right: 40px;
-    margin-bottom: 30px;
+    border-radius: 10px;
 }
 
-#learn-more img {
-    height: 200px;
-    width: 330px;
-    float: left;
-    margin-left: 100px;
-}
-
-#global {
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-#global > h2, h4 {
-    color: aliceblue;
-
-}
-.mission-section 
-{
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 50px 20px;
-    margin: 50px auto;
-    max-width: 1200px;
-    text-align: center;
-}
-
-.mission-section h2 
-{
-    margin-bottom: 20px;
-}
-
-.mission-points 
+.content-wrapper 
 {
     display: flex;
-    justify-content: space-around;
-    margin-top: 40px;
+    flex-direction: column;
+    align-items: center;
 }
 
-.mission-item 
+#learn-more img 
 {
-    flex: 1;
-    margin: 0 20px;
+    height: 200px;
+    width: 330px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+#global 
+{
+    text-align: center;
+    color: white;
+}
+
+#un-initiatives
+{
+    text-align: center;
+    color: white;
+}
+
+.impact-grid, .action-grid, .resources-grid, .news-grid, .mission-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 40px auto;
     padding: 20px;
 }
 
-.mission-item i 
-{
-    font-size: 40px;
-    margin-bottom: 15px;
+.impact-card, .action-card, .resource-card, .news-card, .mission-item, .initiative-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid #4c63af;
 }
 
-.mission-item h3 
-{
+.impact-card:hover, .action-card:hover, .resource-card:hover, 
+.news-card:hover, .mission-item:hover, .initiative-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.impact-card i, .action-card i, .resource-card i, 
+.news-card i, .mission-item i, .initiative-card i {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #4c63af;
+}
+
+.impact-card h3, .action-card h3, .resource-card h3, 
+.news-card h3, .mission-item h3, .initiative-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.impact-card p, .action-card p, .resource-card p, 
+.news-card p, .mission-item p, .initiative-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+}
+
+#global h2, #resources h2, #news h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+atives-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.initiatives-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    gap: 25px;
+}
+
+.initiative-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+#resources, #news {
+    color: white;
+    text-align: center;
+}
+
+.resource-card a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.resource-card a:hover {
+    color: #4c63af;
+    text-decoration: underline;
+}
+
+.mission-section {
+    padding: 40px 20px;
+    margin: 30px auto;
+    max-width: 900px;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+}
+
+.news-card .date {
+    color: #4c63af;
+    font-size: 0.9rem;
     margin-bottom: 10px;
 }
 
-footer 
-{
+.mission-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.mission-item {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid #4c63af;
+}
+
+.mission-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.mission-item i {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #4c63af;
+}
+
+.mission-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.mission-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+}
+
+footer {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     margin-top: 50px;
+    padding: 40px 0;
 }
 
-.footer-content 
-{
+.footer-content {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
 }
 
-.footer-logo 
-{
+.footer-logo {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
+    max-width: 200px;
+    margin-bottom: 30px;
 }
 
-.footer-logo img 
-{
+.footer-logo img {
     width: 100%;
-    max-height: 200px; 
-    object-fit: contain;
+    height: auto;
 }
 
-.footer-contact 
-{
+.footer-contact {
     text-align: center;
-    padding: 20px;
 }
 
-.contact-options 
-{
+.contact-options {
     margin-top: 20px;
     display: flex;
-    justify-content: center;
+    gap: 30px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-.contact-options a 
-{
+.contact-options a {
     color: white;
-    margin: 10px 15px;
     text-decoration: none;
 }
 
-.contact-options a:hover 
-{
+.contact-options a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .main-nav ul {
+        flex-wrap: wrap;
+    }
+
+    .main-nav li {
+        margin: 5px;
+    }
+
+    .middle h1 {
+        font-size: 36px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .mission-points {
+        grid-template-columns: 1fr;
+    }
+
+    
 }
