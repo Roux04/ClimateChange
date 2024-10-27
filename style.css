@@ -73,35 +73,41 @@ section {
     align-items: center;
 }
 
-.middle h1 
-{
-    font-size: 10em;
-    margin-bottom: 21px;
-    color: #78c2d6;
-    text-shadow: 
-    0px 1px 0px #6a99a7,
-    0px 2px 0px #6a99a7,
-    0px 3px 0px #6a99a7,
-    0px 4px 0px #6a99a7,
-    0px 4px 0px #6a99a7,
-    0px 5px 0px #6a99a7,
-    0px 6px 0px #6a99a7,
-    0px 7px 0px #6a99a7,
-    0px 8px 0px #6a99a7,
-    0px 9px 0px #6a99a7,
-    0px 10px 0px #6a99a7,
 
-    0px 10px 5px #ffffff;
+.middle h1, #global h2, #un-initiatives h2, #take-action h2, #resources h2, #news h2, #mission h2, #contact-us h2, #learn-more h2
+{
+    margin-bottom: 21px;
+    color: #ffffff;
+
+    text-shadow: 
+        0px 1px 0px #6a99a7,
+        0px 2px 0px #6a99a7,
+        0px 3px 0px #6a99a7,
+        0px 4px 0px #6a99a7,
+        0px 4px 0px #6a99a7,
+        0px 5px 0px #6a99a7,
+        0px 6px 0px #6a99a7,
+        0px 7px 0px #6a99a7,
+        0px 8px 0px #6a99a7,
+        0px 9px 0px #6a99a7,
+        0px 10px 0px #6a99a7,
+
+        0px 10px 5px #ffffff;
+    font-size: 4em;
 }
 
-.middle p
+.middle h1 {
+    font-size: 10em;
+}
+
+.middle p, #global h4, #un-initiatives h4, #take-action h4, #resources h4, #news h4, #contact-us h4 
 {
     font-size: 18px;
     font-family: 'Courier New', Courier, monospace;
 
     text-shadow:
-    1px 1px 1px rgb(0, 0, 0),
-    2px 2px 1px black;
+        1px 1px 1px rgb(0, 0, 0),
+        2px 2px 1px black;
 }
 
 .buttons {
@@ -132,29 +138,20 @@ section {
     border-radius: 10px;
 }
 
-.content-wrapper 
-{
+.content-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#learn-more img 
-{
+#learn-more img {
     height: 200px;
     width: 330px;
     margin: 20px 0;
     border-radius: 8px;
 }
 
-#global 
-{
-    text-align: center;
-    color: white;
-}
-
-#un-initiatives
-{
+#global, #un-initiatives, #take-action, #resources, #news, #mission {
     text-align: center;
     color: white;
 }
@@ -174,7 +171,7 @@ section {
     padding: 25px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
     border-top: 4px solid #4c63af;
 }
 
@@ -205,18 +202,6 @@ section {
     color: #666;
 }
 
-#global h2, #resources h2, #news h2 {
-    color: white;
-    font-size: 2rem;
-    margin-bottom: 30px;
-}
-
-atives-container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
 .initiatives-container {
     max-width: 1200px;
     margin: 40px auto;
@@ -230,11 +215,6 @@ atives-container {
     padding: 30px;
     margin-bottom: 20px;
     border-radius: 10px;
-}
-
-#resources, #news {
-    color: white;
-    text-align: center;
 }
 
 .resource-card a {
@@ -341,6 +321,18 @@ footer {
     justify-content: center;
 }
 
+.footer-contact h3 {
+    color: #78c2d6;
+    text-shadow: 
+        0px 1px 0px #6a99a7,
+        0px 2px 0px #6a99a7,
+        0px 3px 0px #6a99a7,
+        0px 4px 0px #6a99a7,
+        0px 10px 5px rgba(255, 255, 255, 0.3);
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
 .contact-options a {
     color: white;
     text-decoration: none;
@@ -359,8 +351,19 @@ footer {
         margin: 5px;
     }
 
+    .middle h1, 
+    #global h2, 
+    #un-initiatives h2,
+    #take-action h2,
+    #resources h2, 
+    #news h2,
+    #mission h2,
+    #contact-us h2 {
+        font-size: 2.5em;
+    }
+
     .middle h1 {
-        font-size: 36px;
+        font-size: 4em;
     }
 
     .buttons {
@@ -373,6 +376,4 @@ footer {
     .mission-points {
         grid-template-columns: 1fr;
     }
-
-    
 }
