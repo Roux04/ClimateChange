@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,6 +106,14 @@
                     <h3>Energy Efficiency</h3>
                     <p>Use energy-efficient appliances and LED lights.</p>
                 </div>
+                <div class="action-card donation-card">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                    <h3>Support SDGs</h3>
+                    <p>Make a direct impact by supporting the UN Sustainable Development Goals through donations.</p>
+                    <a href="https://donate.jointsdgfund.org/" target="_blank" class="donate-button">
+                        Donate Now
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -121,12 +128,69 @@
                         <li><a href="#">Teaching Resources</a></li>
                     </ul>
                 </div>
-                <div class="resource-card">
-                    <h3>Tools & Calculators</h3>
-                    <ul>
-                        <li><a href="#">Carbon Footprint Calculator</a></li>
-                        <li><a href="#">Energy Savings Calculator</a></li>
-                    </ul>
+                <div class="resource-card calculator-container">
+                    <h3>Interactive Calculators</h3>
+                    <div class="calculators-wrapper">
+                        <!-- Carbon Footprint Calculator -->
+                        <div class="calculator">
+                            <div class="calculator-header">
+                                <i class="fa-solid fa-calculator"></i>
+                                <h4>Carbon Footprint</h4>
+                            </div>
+                            <div class="calculator-screen">
+                                <span id="carbon-result">0 kg CO₂/month</span>
+                            </div>
+                            <div class="calculator-inputs">
+                                <div class="input-group">
+                                    <label>Miles/month:</label>
+                                    <input type="number" id="car-miles" placeholder="0">
+                                </div>
+                                <div class="input-group">
+                                    <label>kWh/month:</label>
+                                    <input type="number" id="electricity" placeholder="0">
+                                </div>
+                                <div class="input-group">
+                                    <label>Gas therms:</label>
+                                    <input type="number" id="gas" placeholder="0">
+                                </div>
+                                <div class="input-group">
+                                    <label>Flights/year:</label>
+                                    <input type="number" id="flights" placeholder="0">
+                                </div>
+                                <button class="calculate-btn" onclick="calculateCarbon()">Calculate</button>
+                            </div>
+                        </div>
+
+                        <!-- Energy Savings Calculator -->
+                        <div class="calculator">
+                            <div class="calculator-header">
+                                <i class="fa-solid fa-bolt"></i>
+                                <h4>Energy Savings</h4>
+                            </div>
+                            <div class="calculator-screen">
+                                <span id="energy-result">$0/month</span>
+                            </div>
+                            <div class="calculator-inputs">
+                                <div class="input-group">
+                                    <label>Current kWh:</label>
+                                    <input type="number" id="current-kwh" placeholder="0">
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="old-appliances">
+                                    <label>Old Appliances?</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="led-lights">
+                                    <label>LED Lights?</label>
+                                </div>
+                                <div class="input-group">
+                                    <label>Thermostat °F:</label>
+                                    <input type="number" id="thermostat" placeholder="72">
+                                </div>
+                                <button class="calculate-btn" onclick="calculateEnergy()">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -183,5 +247,35 @@
             </div>
         </footer>
     </main>
+
+    <script>
+        function calculateCarbon() {
+            const miles = Number(document.getElementById('car-miles').value) || 0;
+            const electricity = Number(document.getElementById('electricity').value) || 0;
+            const gas = Number(document.getElementById('gas').value) || 0;
+            const flights = Number(document.getElementById('flights').value) || 0;
+
+            const total = (miles * 0.404) + (electricity * 0.92) + (gas * 5.3) + (flights * 90 / 12);
+            document.getElementById('carbon-result').textContent = `${total.toFixed(2)} kg CO₂/month`;
+        }
+
+        function calculateEnergy() {
+            const kwh = Number(document.getElementById('current-kwh').value) || 0;
+            const oldAppliances = document.getElementById('old-appliances').checked;
+            const ledLights = document.getElementById('led-lights').checked;
+            const thermostat = Number(document.getElementById('thermostat').value) || 72;
+
+            let savings = 0;
+            const monthlyBill = kwh * 0.14;
+
+            if (oldAppliances) savings += monthlyBill * 0.15;
+            if (!ledLights) savings += monthlyBill * 0.10;
+            if (Math.abs(thermostat - 68) > 2) {
+                savings += monthlyBill * 0.08;
+            }
+
+            document.getElementById('energy-result').textContent = `$${savings.toFixed(2)}/month`;
+        }
+    </script>
 </body>
 </html>
