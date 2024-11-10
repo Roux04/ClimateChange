@@ -249,7 +249,8 @@
     </main>
 
     <script>
-        function calculateCarbon() {
+        function calculateCarbon() 
+        {
             const miles = Number(document.getElementById('car-miles').value) || 0;
             const electricity = Number(document.getElementById('electricity').value) || 0;
             const gas = Number(document.getElementById('gas').value) || 0;
@@ -259,7 +260,8 @@
             document.getElementById('carbon-result').textContent = `${total.toFixed(2)} kg CO₂/month`;
         }
 
-        function calculateEnergy() {
+        function calculateEnergy() 
+        {
             const kwh = Number(document.getElementById('current-kwh').value) || 0;
             const oldAppliances = document.getElementById('old-appliances').checked;
             const ledLights = document.getElementById('led-lights').checked;
@@ -270,7 +272,8 @@
 
             if (oldAppliances) savings += monthlyBill * 0.15;
             if (!ledLights) savings += monthlyBill * 0.10;
-            if (Math.abs(thermostat - 68) > 2) {
+            if (Math.abs(thermostat - 68) > 2) 
+            {
                 savings += monthlyBill * 0.08;
             }
 
