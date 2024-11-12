@@ -79,11 +79,17 @@
             <div class="initiatives-container">
                 <div class="initiative-card">
                     <h3>Paris Agreement</h3>
-                    <p>A legally binding international treaty on climate change, adopted in 2015.</p>
+                    <a href="https://unfccc.int/most-requested/key-aspects-of-the-paris-agreement" target="_blank">
+                        <img src="ParisAgreement.jpg" alt="Paris Agreement Summit" class="initiative-image">
+                    </a>
+                    <p>A legally binding international treaty on climate change, adopted in 2015. The agreement aims to limit global warming to well below 2°C, preferably 1.5°C, compared to pre-industrial levels.</p>
                 </div>
-                <div class="initiative-card">
+                <div class="initiative-card"> 
                     <h3>SDG 13: Climate Action</h3>
-                    <p>One of the 17 Sustainable Development Goals focusing on urgent action to combat climate change.</p>
+                    <a href="https://www.un.org/sustainabledevelopment/climate-action/" target="_blank">
+                        <img src="SDGs.png" alt="SDG 13 Climate Action" class="initiative-image">
+                    </a>
+                    <p>One of the 17 Sustainable Development Goals focusing on urgent action to combat climate change and its impacts through global cooperation and commitment.</p>
                 </div>
             </div>
         </section>
@@ -129,9 +135,8 @@
                     </ul>
                 </div>
                 <div class="resource-card calculator-container">
-                    <h3>Interactive Calculators</h3>
+                    <h3>Calculators</h3>
                     <div class="calculators-wrapper">
-                        <!-- Carbon Footprint Calculator -->
                         <div class="calculator">
                             <div class="calculator-header">
                                 <i class="fa-solid fa-calculator"></i>
@@ -160,8 +165,6 @@
                                 <button class="calculate-btn" onclick="calculateCarbon()">Calculate</button>
                             </div>
                         </div>
-
-                        
                         <div class="calculator">
                             <div class="calculator-header">
                                 <i class="fa-solid fa-bolt"></i>
@@ -249,8 +252,7 @@
     </main>
 
     <script>
-        function calculateCarbon() 
-        {
+        function calculateCarbon() {
             const miles = Number(document.getElementById('car-miles').value) || 0;
             const electricity = Number(document.getElementById('electricity').value) || 0;
             const gas = Number(document.getElementById('gas').value) || 0;
@@ -260,8 +262,7 @@
             document.getElementById('carbon-result').textContent = `${total.toFixed(2)} kg CO₂/month`;
         }
 
-        function calculateEnergy() 
-        {
+        function calculateEnergy() {
             const kwh = Number(document.getElementById('current-kwh').value) || 0;
             const oldAppliances = document.getElementById('old-appliances').checked;
             const ledLights = document.getElementById('led-lights').checked;
@@ -272,8 +273,7 @@
 
             if (oldAppliances) savings += monthlyBill * 0.15;
             if (!ledLights) savings += monthlyBill * 0.10;
-            if (Math.abs(thermostat - 68) > 2) 
-            {
+            if (Math.abs(thermostat - 68) > 2) {
                 savings += monthlyBill * 0.08;
             }
 
