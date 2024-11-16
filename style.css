@@ -60,6 +60,15 @@ section {
     min-height: 100vh;
     padding: 80px 20px;
     box-sizing: border-box;
+    display: none;
+}
+
+#home {
+    display: block;
+}
+
+.main-nav li.active {
+    font-weight: bold;
 }
 
 .middle {
@@ -511,4 +520,19 @@ footer {
     .action-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.news-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    gap: 25px;
+}
+
+.news-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
